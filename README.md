@@ -1,3 +1,12 @@
+---
+title: Removo API
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 <div align="center">
   <h1>Removo.</h1>
   <p><strong>Premium AI Background Removal & Upscaling Engine</strong></p>
