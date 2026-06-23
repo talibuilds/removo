@@ -12,6 +12,10 @@ pinned: false
   <p><strong>Premium AI Background Removal & Upscaling Engine</strong></p>
 
   <p>
+    <strong><a href="https://bgremovo.vercel.app">✨ Try the Live Demo ✨</a></strong>
+  </p>
+
+  <p>
     <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" /></a>
     <a href="https://github.com/danielgatis/rembg"><img src="https://img.shields.io/badge/Rembg-Python-blue?style=for-the-badge&logo=python&logoColor=white" alt="Rembg" /></a>
     <a href="https://vercel.com"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" /></a>
