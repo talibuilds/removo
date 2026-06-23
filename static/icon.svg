@@ -1,0 +1,16 @@
+<svg width="1024" height="1024" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 100,0
+           L 432,0
+           A 80,80 0 1 0 512,80
+           L 512,412
+           A 100,100 0 0 1 412,512
+           L 100,512
+           A 100,100 0 0 1 0,412
+           L 0,100
+           A 100,100 0 0 1 100,0
+           Z" fill="#0d0d0d"/>
+
+  <text x="248" y="370" text-anchor="middle"
+        font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold"
+        font-size="320" fill="#d4af37">R</text>
+</svg>
