@@ -18,6 +18,5 @@ jobs:
       - name: Push to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          # REPLACE "YOUR_HF_USERNAME/YOUR_SPACE_NAME" with your actual username and space name
-          SPACE_REPO: "YOUR_HF_USERNAME/removo-api"
+          SPACE_REPO: "taliblabs/removo"
         run: git push https://user:$HF_TOKEN@huggingface.co/spaces/$SPACE_REPO main -f
