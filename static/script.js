@@ -62,6 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let enhancementTimeout      = null;
 
     // ═══════════════════════════════════════════════
+    // API CONFIGURATION
+    // ═══════════════════════════════════════════════
+    // Direct URL to your Hugging Face Space API
+    const API_BASE = 'https://taliblabs-removo.hf.space';
+
+    // ═══════════════════════════════════════════════
     // THEME TOGGLE
     // ═══════════════════════════════════════════════
     const themeToggle = document.getElementById('theme-toggle');
@@ -381,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('mode', activeMode);
 
         try {
-            const response = await fetch('/remove-bg', { method: 'POST', body: formData });
+            const response = await fetch(`${API_BASE}/remove-bg`, { method: 'POST', body: formData });
             if (!response.ok) throw new Error('Failed');
             const blob = await response.blob();
             baseResultBlob = blob; currentResultBlob = blob;
@@ -423,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('sharpness',  sharpness.value);
 
         try {
-            const response = await fetch('/enhance', { method: 'POST', body: formData });
+            const response = await fetch(`${API_BASE}/enhance`, { method: 'POST', body: formData });
             if (!response.ok) throw new Error('Enhancement failed');
             const blob = await response.blob();
             currentResultBlob = blob;
@@ -454,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('scale', scale);
 
             try {
-                const response = await fetch('/upscale', { method: 'POST', body: formData });
+                const response = await fetch(`${API_BASE}/upscale`, { method: 'POST', body: formData });
                 if (!response.ok) throw new Error('Upscale failed');
                 const blob = await response.blob();
                 currentResultBlob = blob;
