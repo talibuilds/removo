@@ -1,4 +1,5 @@
 import io
+import os
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.responses import Response, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -73,11 +74,14 @@ def _upscale_rgba(img: Image.Image, scale: int) -> Image.Image:
 # Routes
 # ─────────────────────────────────────────────────────────────────────────────
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+if os.path.isdir("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 async def read_index():
-    return FileResponse("static/index.html")
+    if os.path.exists("static/index.html"):
+        return FileResponse("static/index.html")
+    return {"status": "ok", "message": "Removo API is running."}
 
 
 @app.post("/remove-bg")
