@@ -74,9 +74,6 @@ def _upscale_rgba(img: Image.Image, scale: int) -> Image.Image:
 # Routes
 # ─────────────────────────────────────────────────────────────────────────────
 
-if os.path.isdir("static"):
-    app.mount("/static", StaticFiles(directory="static"), name="static")
-
 @app.get("/")
 async def read_index():
     if os.path.exists("static/index.html"):
@@ -152,3 +149,6 @@ async def upscale_image(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+if os.path.isdir("static"):
+    app.mount("/", StaticFiles(directory="static"), name="static")
